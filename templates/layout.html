@@ -12,13 +12,24 @@
     <body style="background-color: #212121;">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-              <a class="navbar-brand" href="/">Password Generator</a>
+              <a class="navbar-brand" href="{{url_for('home', lang=lang)}}" >Password Generator</a>
               <div class="" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                  {% if (lang == "es") %}
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('about')}}">About</a>
+                    <a class="nav-link" href="{{url_for('about', lang='es')}}">Acerca de</a>
                   </li>
-                    
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('home', lang='en')}}" >Change to English</a>
+                  </li>
+                  {% else %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('about', lang='en')}}">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('home', lang='es')}}" >Cambiar a Español</a>
+                  </li>
+                  {% endif %}
                 </ul>
               </div>
             </div>
