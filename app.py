@@ -1,6 +1,6 @@
-from crypt import methods
 from random import choice
 from flask import Flask, render_template, request
+import string
 
 app = Flask(__name__)
 
@@ -21,17 +21,17 @@ def generate():
     if request.method == "GET":
         return render_template("home.html")
 
-    characters = list('abcdefghijklmnopqrstuvwxyz')
+    characters = string.ascii_lowercase
     generated_password = ''
 
     lenght = int(request.form.get('lenght'))
     
     if request.form.get('uppercase'):
-        characters.extend(list('ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'))
+        characters += string.ascii_uppercase
     if request.form.get('special'):
-        characters.extend(list('/*-+=!?@#$%&*()'))
+        characters += string.punctuation
     if request.form.get('numbers'):
-        characters.extend(list('0123456789'))
+        characters += string.digits
 
     for i in range(lenght):
         generated_password += choice(characters)
@@ -45,4 +45,3 @@ def about(lang):
 
 if __name__ == "__main__":
     app.run(debug=True, port=4000)
-
