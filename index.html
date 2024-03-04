@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="description" content="Generador de contraseñas de una logitud determinada, pudiendo elegir si se quiere añadir mayúsculas, carácteres especiales y/o números.">
@@ -12,14 +12,13 @@
 
     </head>
     <body style="background-color: #212121;">
-
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
               <a class="navbar-brand" href="./index.html" >Password Generator</a>
               <div class="" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                   <li class="nav-item">
-                    <a class="nav-link" href="./about.html">Acerca de</a>
+                    <a class="nav-link" href="./about.html">Info</a>
                   </li>
                 </ul>
               </div>
@@ -55,10 +54,10 @@
                 <p class="text-danger mt-2 mb-0" id="alert"></p>
             </div>
 
-            <div class="card card-body bg-secondary text-center mt-4">
+            <div class="card card-body bg-secondary text-center mt-4" hidden id="pwcont">
                 <h2>Password</h2>
         
-                <div id="password">test</div>
+                <div id="password"></div>
                 
                 <a href="#" class="btn btn-primary mt-2" onClick = "clip_div('password')">Copy Password</a>        
             </div>

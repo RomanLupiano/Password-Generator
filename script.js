@@ -1,5 +1,6 @@
 var lenght_elem = document.getElementById("lenght");
 var password_elem = document.getElementById("password");
+var password_elem_cont = document.getElementById("pwcont");
 var alert_elem = document.getElementById("alert");
 var upper, special, numbers;
 
@@ -27,6 +28,7 @@ function generatePw() {
     }
 
     password_elem.innerText = pswd
+    password_elem_cont.hidden = false
 }
 
 
